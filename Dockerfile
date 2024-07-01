@@ -15,13 +15,13 @@ WORKDIR /usr/local/app
 # This stage is used as the base for the client-dev and client-build stages,
 # since there are common steps needed for each.
 ###################################################
-FROM base AS client-base
-COPY client/package.json client/yarn.lock ./
-RUN --mount=type=cache,id=yarn,target=/usr/local/share/.cache/yarn \
-    yarn install
-COPY client/.eslintrc.cjs client/index.html client/vite.config.js ./
-COPY client/public ./public
-COPY client/src ./src
+# FROM base AS client-base
+# COPY client/package.json client/yarn.lock ./
+# RUN --mount=type=cache,id=yarn,target=/usr/local/share/.cache/yarn \
+#     yarn install
+# COPY client/.eslintrc.cjs client/index.html client/vite.config.js ./
+# COPY client/public ./public
+# COPY client/src ./src
 
 ###################################################
 # Stage: client-dev
